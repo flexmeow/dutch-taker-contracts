@@ -1,0 +1,11 @@
+# @version 0.4.3
+
+
+@external
+def exchange(
+    i: uint256,
+    j: uint256,
+    dx: uint256,
+    min_dy: uint256,
+) -> uint256:
+    ...

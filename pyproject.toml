@@ -1,0 +1,15 @@
+[project]
+name = "dutch-taker-contracts"
+version = "0.1.0"
+description = "Contracts for taking Flex Dutch auctions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "vyper==0.4.3",
+    "mamushi==0.0.8"
+]
+
+[tool.mamushi]
+line-length = 100
+safe = false
+exclude = ["lib/"]

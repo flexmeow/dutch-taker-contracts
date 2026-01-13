@@ -1,0 +1,11 @@
+# @version 0.4.3
+
+
+@external
+def take(
+    auction_id: uint256,
+    max_take_amount: uint256,
+    receiver: address,
+    data: Bytes[10**5],
+) -> uint256:
+    ...
