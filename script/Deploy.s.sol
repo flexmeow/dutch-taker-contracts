@@ -18,7 +18,6 @@ import "forge-std/Script.sol";
 // cast abi-encode "constructor(address)" 0xbACBBefda6fD1FbF5a2d6A79916F4B6124eD2D49
 
 contract Deploy is Script {
-
     bool public isTest;
     address public deployer;
 

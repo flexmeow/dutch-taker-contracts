@@ -6,7 +6,6 @@ import "../script/Deploy.s.sol";
 import "forge-std/Test.sol";
 
 contract TestTaker is Deploy, Test {
-
     function setUp() public {
         // notify deplyment script that this is a test
         isTest = true;
