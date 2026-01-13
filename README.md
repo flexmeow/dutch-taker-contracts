@@ -43,7 +43,7 @@ forge t
 
 Deploy:
 ```shell
-forge script script/Deploy.s.sol:Deploy --verify --slow --legacy --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
+forge script script/Deploy.s.sol:Deploy --verify --slow --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
 ```
 
 ## Code Style
