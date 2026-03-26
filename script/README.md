@@ -1,3 +1,1 @@
-** Unaudited Beta **
-
-- yvWETH-2/USDC:  0x8828C676FE14cBEF41F44d7e16a81c1418fe0100
+- usdc taker:  0x83Cf6efbBf7Fb7B53c271F4BB00D8469dcc63E7B

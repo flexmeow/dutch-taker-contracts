@@ -8,7 +8,7 @@ import "forge-std/Script.sol";
 // ---- Usage ----
 
 // deploy:
-// forge script script/Deploy.s.sol:Deploy --verify --slow --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
+// forge script script/Deploy.s.sol:Deploy --verify --slow -g 250 --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
 
 // verify:
 // vyper -f solc_json src/price_feed.vy > out/build-info/verify.json
@@ -32,13 +32,13 @@ contract Deploy is Script {
         deployer = vm.addr(_pk);
 
         if (!isTest) {
-            require(deployer == address(0x285E3b1E82f74A99D07D2aD25e159E75382bB43B), "!johnnyonline.eth");
+            require(deployer == address(0x000005281a2b04A182085D37cC9E6dD552795caa), "!johnny.flexmeow.eth");
             console.log("Deployer address: %s", deployer);
         }
 
         vm.startBroadcast(_pk);
 
-        taker = ITaker(deployCode("yvweth2_usdc_taker"));
+        taker = ITaker(deployCode("usdc_taker"));
 
         if (isTest) {
             vm.label({account: address(taker), newLabel: "Taker"});
