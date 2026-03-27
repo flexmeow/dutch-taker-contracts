@@ -14,7 +14,6 @@ interface IAuction {
 }
 
 contract TestTaker is Deploy, Test {
-
     address constant USDC = address(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48);
     IAuction constant AUCTION = IAuction(0x7d066Db446eC745ccC4454730a64446c3e03E659);
 
@@ -50,13 +49,10 @@ contract TestTaker is Deploy, Test {
 
     /// @dev Returns (router, calldata) from the Enso API response.
     ///      The shell script outputs abi.encodePacked(to, data) — first 20 bytes are the router address.
-    function _getSwapRoute(
-        uint256 chainId,
-        address inputToken,
-        address outputToken,
-        uint256 amount,
-        address sender
-    ) internal returns (address router, bytes memory data) {
+    function _getSwapRoute(uint256 chainId, address inputToken, address outputToken, uint256 amount, address sender)
+        internal
+        returns (address router, bytes memory data)
+    {
         string[] memory cmd = new string[](7);
         cmd[0] = "bash";
         cmd[1] = "script/get_enso_route.sh";
