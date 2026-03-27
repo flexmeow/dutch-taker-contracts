@@ -11,7 +11,7 @@ import "forge-std/Script.sol";
 // forge script script/Deploy.s.sol:Deploy --verify --slow -g 250 --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
 
 // verify:
-// vyper -f solc_json src/price_feed.vy > out/build-info/verify.json
+// vyper -f solc_json src/usdc_taker.vy > out/build-info/verify.json
 // vyper -f solc_json --path src/periphery --path src src/leverage_zapper.vy > out/build-info/verify.json
 
 // constructor args:

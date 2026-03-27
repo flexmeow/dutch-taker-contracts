@@ -145,16 +145,12 @@ def takeCallback(
     # Collateral --> USDC via DEX aggregator
     raw_call(router, swap_data)
 
-    # Check USDC balance
-    usdc_balance: uint256 = staticcall USDC.balanceOf(self)
+    # Check USDC profit
+    usdc_profit: uint256 = staticcall USDC.balanceOf(self) - needed_amount
 
-    # Make sure we have profit
-    assert usdc_balance > needed_amount, "!profit"
-
-    # USDC (profit) --> WETH via Curve
-    extcall CURVE_POOL.exchange(
-        _CURVE_USDC_INDEX, _CURVE_WETH_INDEX, usdc_balance - needed_amount, 0
-    )
-
-    # WETH --> ETH
-    extcall IWETH(WETH.address).withdraw(staticcall WETH.balanceOf(self))
+    # Swap profit to ETH if any
+    if usdc_profit > 0:
+        extcall CURVE_POOL.exchange(
+            _CURVE_USDC_INDEX, _CURVE_WETH_INDEX, usdc_profit, 0
+        )
+        extcall IWETH(WETH.address).withdraw(staticcall WETH.balanceOf(self))
